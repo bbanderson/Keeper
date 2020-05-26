@@ -8,7 +8,7 @@ function App() {
 
   const [noteItems, setNoteItems] = useState([]);
 
-  function getNote(items) {
+  function addNote(items) {
     setNoteItems(prev => {
       return [
         ...prev,
@@ -32,8 +32,8 @@ function App() {
   return (
     <div>
       <Header />
-      <CreateArea newNote={getNote} />
-      {noteItems.map((item, index)=><Note key={index} id={index} title={noteItems[index].title} content={noteItems[index].content} deleteNote={deleteNote} />)}
+      <CreateArea newNote={addNote} />
+      {noteItems.map((item, index)=><Note key={index} id={index} title={item.title} content={item.content} deleteNote={deleteNote} />)}
       <Footer />
     </div>
   );

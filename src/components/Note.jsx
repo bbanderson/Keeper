@@ -1,5 +1,7 @@
 import React from "react";
 
+import DeleteIcon from '@material-ui/icons/Delete';
+
 function Note(props) {
 
   function sendId() {
@@ -10,7 +12,7 @@ function Note(props) {
     <div id={props.id} className="note">
       <h1>{props.title}</h1>
       <p>{props.content}</p>
-      <button onClick={()=>sendId()}>DELETE</button>
+      <button onClick={()=>sendId()}><DeleteIcon /></button>
     </div>
   );
 }
